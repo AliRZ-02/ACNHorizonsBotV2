@@ -1,7 +1,9 @@
 name: Tweet Cron Job
+
 on: 
   schedule:
-    - cron: "15 16 * * *"
+    - cron: '22 16 * * *'
+
 jobs:
   send-tweets:
     runs-on: ubuntu-latest
