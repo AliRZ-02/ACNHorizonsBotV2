@@ -1,0 +1,24 @@
+name: Tweet Cron Job
+on: 
+  schedule:
+    - cron: "0 12 * * *"
+jobs:
+  send-tweets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Python Version
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "ACNHorizonsBotV2/requirements.txt"
+      
+      - name: Run Script
+        run: |
+          cd ACNHorizonsBotV2
+          python3 tweet.py
