@@ -2,7 +2,7 @@ name: Tweet Cron Job
 
 on: 
   schedule:
-    - cron: '56 16 * * *'
+    - cron: '35 17 * * *'
 
 jobs:
   send-tweets:
